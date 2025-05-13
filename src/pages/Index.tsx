@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { AboutSection } from "@/components/AboutSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
@@ -14,8 +13,9 @@ const Index = () => {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Animation trigger effect
+  // Set page title
   useEffect(() => {
+    document.title = "Davy Woolley | Portfólio"; // 🔁 Altere aqui para seu nome
     setIsVisible(true);
   }, []);
 
@@ -25,16 +25,13 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
-        {/* Background with gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/30 z-0">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')] bg-cover bg-center opacity-20"></div>
         </div>
-        
-        {/* Animated circles in background */}
+
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-secondary/10 filter blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-        
-        {/* Content with animations */}
+
         <div 
           className={`text-center max-w-3xl mx-auto relative z-10 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
@@ -64,7 +61,6 @@ const Index = () => {
           </Button>
         </div>
 
-        {/* Animated geometric shapes */}
         <div className="absolute bottom-10 left-10 w-16 h-16 border-2 border-primary/30 rotate-45 animate-spin-slow opacity-70 hidden md:block"></div>
         <div className="absolute top-20 right-20 w-12 h-12 border-2 border-primary/30 rounded-full animate-pulse opacity-70 hidden md:block"></div>
       </section>
@@ -75,7 +71,6 @@ const Index = () => {
       <FunSection />
       <ContactSection />
       
-      {/* Footer */}
       <footer className="py-8 text-center text-muted-foreground">
         <div className="container mx-auto">
           <p>{t.footer.copyright}</p>
